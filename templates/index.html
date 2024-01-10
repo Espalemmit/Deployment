@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My First Webpage</title>
+</head>
+<body>
+    <h1>Email Spam</h1>
+    <form method="post" action="/predict">
+        <textarea name="content" placeholder="Enter Email" rows="15" cols="35" autocomplete="off">
+            {{ email }}
+        </textarea>
+        <div>
+            <button type="submit">Check</button>
+            <a href="/">Reset</a>
+        </div>
+    </form>
+    
+    {% if prediction==1 %}
+        <h2>SPAM</h2>
+    {% elif prediction==-1 %}
+        <h2>NOT SPAM</h2>
+    {% endif %}
+</body>
+</html>
